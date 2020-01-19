@@ -1,0 +1,9 @@
+Package: verium-miner
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: amd64
+Maintainer: Andy Hahn <andy@madskills.io>
+Description: Verium Miner
+ A basic package containing @fireworm71's miner (https://github.com/fireworm71/veriumMiner)
+ and systemd unit files to run it as a service.

@@ -1,0 +1,18 @@
+[Unit]
+Description=Verium miner
+
+[Service]
+WorkingDirectory=/var/run/verium
+ExecStart=/usr/share/verium/cpuminer \
+                --config=/etc/verium.conf
+Restart=always
+RestartSec=3
+SyslogIdentifier=verium-miner
+Restart=always
+KillSignal=SIGQUIT
+User=root
+Group=root
+Nice=-19
+
+[Install]
+WantedBy=multi-user.target
