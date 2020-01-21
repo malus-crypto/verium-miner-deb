@@ -1,7 +1,8 @@
 Package: verium-miner
-Version: 1.0-1
+Version: 1.0-3
 Section: base
 Priority: optional
+Depends: libcurl4, libssl1.1
 Architecture: amd64
 Maintainer: Andy Hahn <andy@madskills.io>
 Description: Verium Miner

@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 ADD pkg /pkg/
+ADD patch /patch/
 
 # Setup build env
 RUN set -ex \
@@ -27,6 +28,7 @@ RUN set -ex \
 # Build miner
 RUN set -ex \
     && git clone https://github.com/fireworm71/veriumMiner \
+    && cp /patch/* veriumMiner/ \
     && cd veriumMiner \
     && ./build.sh > /dev/null 2>&1 \
     && mv cpuminer /pkg/usr/share/verium/

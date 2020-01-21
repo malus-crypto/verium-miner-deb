@@ -2,6 +2,7 @@
 Description=Verium miner
 
 [Service]
+RuntimeDirectory=verium
 WorkingDirectory=/var/run/verium
 ExecStart=/usr/share/verium/cpuminer \
                 --config=/etc/verium.conf
