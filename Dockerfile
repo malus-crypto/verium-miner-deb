@@ -25,9 +25,17 @@ RUN set -ex \
     && apt-get clean \
     && rm -rf /tmp/* /var/tmp/*
 
-# Build miner
+
+# Build miner w/ native optimisation 
 RUN set -ex \
     && git clone https://github.com/fireworm71/veriumMiner \
+    && cd veriumMiner \
+    && ./build.sh > /dev/null 2>&1 \
+    && mv cpuminer /pkg/usr/share/verium/cpuminer-opt
+
+
+# Build miner w/o native optimisation
+RUN set -ex \
     && cp /patch/* veriumMiner/ \
     && cd veriumMiner \
     && ./build.sh > /dev/null 2>&1 \

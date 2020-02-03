@@ -1,5 +1,5 @@
 Package: verium-miner
-Version: 1.0-3
+Version: 1.0-4
 Section: base
 Priority: optional
 Depends: libcurl4, libssl1.1

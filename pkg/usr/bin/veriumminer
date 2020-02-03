@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! "0" = `cat /proc/cpuinfo | grep -c avx` ]; then
+    /usr/share/verium/cpuminer-opt "$@"
+else
+    /usr/share/verium/cpuminer "$@"
+fi
