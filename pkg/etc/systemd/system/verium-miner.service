@@ -7,9 +7,11 @@ WorkingDirectory=/var/run/verium
 ExecStart=/usr/bin/veriumminer \
                 --config=/etc/verium.conf
 
+# Until WatchdogSignal is supported by the systemd version installed, this causes the hugepages
+#  to not get released and the next miner process can't aquire enough memory
 # Restart miner every 6 hrs to prevent efficency loss
-WatchdogSec=21600
-WatchdogSignal=SIGQUIT
+# WatchdogSec=21600
+# WatchdogSignal=SIGQUIT
 Restart=always
 RestartSec=3
 
